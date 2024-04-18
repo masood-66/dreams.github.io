@@ -1,0 +1,281 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Islamic_Dreams.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+	<!-- Meta setup -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="keywords" content="">
+	<meta name="decription" content="">
+	<meta name="author" content="Mahmudul Hasan">
+
+	<title>Dreams in Islam</title>
+
+	<!-- Fav Icon -->
+	<link rel="icon" href="img/fav.png" />
+
+	<!-- Include Bootstrap -->
+	<link rel="stylesheet" href="css/bootstrap.css" />
+
+	<link rel="stylesheet" href="css/font.css" />
+
+	<%--<link rel="stylesheet" href="https://use.typekit.net/wyc3jho.css">--%>
+	<!-- Main StyleSheet -->
+	<link rel="stylesheet" href="style.css" />
+
+
+	<!-- Responsive CSS -->
+	<link rel="stylesheet" href="css/responsive.css" />
+	<style type="text/css">
+		@font-face {
+			font-family: jameel-noori-nastaleeq;
+			src: url("font/JameelNooriNastaleeq.ttf") format("woff"), url("font/JameelNooriNastaleeq.ttf") format("opentype"), url("font/JameelNooriNastaleeq.ttf") format("truetype");
+		}
+
+		.body {
+			font-family: "jameel-noori-nastaleeq";
+			font-size: 28px;
+		}
+
+		.subnav:hover .submenu {
+			display: block;
+		}
+	</style>
+	<style>
+		.ui-menu-item-wrapper {
+			font-family: jameel-noori-nastaleeq;
+			font-size: 20px;
+			text-align: right;
+		}
+
+		.ui-widget-content {
+			border: 1px solid #dddddd;
+			background-color: black;
+			font-family: jameel-noori-nastaleeq;
+			font-size: 34px;
+			text-align: right;
+		}
+
+		.ui-widget.ui-widget-content {
+			border: 1px solid #c5c5c5;
+			background-color: #131f30;
+			color: white;
+			color: #fff;
+			display: block;
+			font-size: 20px;
+			color: #fff;
+			margin: 10px 0;
+
+		}
+		.Refference {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-image: url(img/obr.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			font-size: 16px;
+			margin-left: 15px;
+			text-align: center;
+			color: #b59060;
+			font-family: JameelNooriNastaleeqKasheeda;
+		}
+		.Author {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background-image: url(img/gold.png);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			font-size: 16px;
+			margin-left: 15px;
+			text-align: center;
+			color: #b59060;
+			font-family: JameelNooriNastaleeqKasheeda;
+		}
+		.txt-Para {
+			font-family: "jameel-noori-nastaleeq";
+			font-size: 24px;
+			font-weight: 600;
+			color: black;
+			border: 0px;
+		}
+		
+/*.language-wrapper ul li:first-child a {
+    font-family: 'jameel-noori-nastaleeq';
+    font-size: 25px;
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 7px;
+    margin-right: 8px;
+    position: relative;
+    top: -4px;
+    width: 76px;
+}*/
+	</style>
+	
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body onselectstart="return false">
+	<form id="form1" runat="server">
+
+
+		<!-- language area start -->
+		<div class="language">
+			<div class="container-fluid">
+				<div class="language-wrapper text-right">
+					<ul>
+						<li style="color:whitesmoke;"><a  style="     color: whitesmoke;background:#cb9d63;" href="http://110.93.246.114/Urdu">اردو  </a></li>
+						<li ><a style="color:whitesmoke" href="Home">ENG</a></li>
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- language area end -->
+
+		<!-- menu area start -->
+		<div class="menu d-none d-md-block">
+			<div class="container">
+				<div class="menu-wrapper text-center">
+					<ul>
+
+
+
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="About-Us">ہمیں جانیں<span>|</span> </a></li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="#" class="subnav">زیارات<span>|</span></a>
+							<ul dir="rtl" style="text-align: right">
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Allah-in-Dream">اللہ تعالیٰ کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Angels-in-Dream">فرشتوں کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Prophets-in-Dream">پیغمبران کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Khulefa-in-Dreams">خلفائے راشدین کو دیکھنا</a></li>
+							</ul>
+						</li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Dream-Interpretation">علم تعبیر<span>|</span> </a></li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Types-of-Dreams">خوابوں کی اقسام<span>|</span></a></li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Home">مرکزی صفحہ</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- menu area end -->
+
+		<!-- sm-menu area start -->
+		<div class="sm-menu d-bloc d-md-none">
+			<div class="container">
+				<div class="sm-menu-wrapper">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu-wrapper">
+					<ul>
+						<li ><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="About-Us">ہمیں جانیں<span>|</span> </a></li>
+						<li ><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="#" class="subnav">زیارات<span>|</span></a>
+							<ul dir="rtl" style="text-align: right">
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Allah-in-Dream">اللہ تعالیٰ کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Angels-in-Dream">فرشتوں کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Prophets-in-Dream">پیغمبران کو دیکھنا</a></li>
+								<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Seeing-Khulefa-in-Dreams">خلفائے راشدین کو دیکھنا</a></li>
+							</ul>
+						</li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Dream-Interpretation">علم تعبیر<span>|</span> </a></li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Types-of-Dreams">خوابوں کی اقسام<span>|</span></a></li>
+						<li><a  style="font-family: 'JameelNooriNastaleeqKasheeda';font-weight: 600;" href="/Home">مرکزی صفحہ</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- sm-menu area end -->
+
+		<!-- banner area start -->
+		<div class="banner">
+			<div class="container-fluid">
+				<div class="banner-wrapper">
+					<img src="img/ara.png" alt="images not found" style="display: none;">
+					
+				</div>
+			</div>
+		</div>
+		<!-- banner area end -->
+		<div class="banner-bg">
+			<!-- search area start -->
+			<div class="search">
+				<div class="container">
+					<div class="ser-sug">
+						<div class="serach-wrapper" style="width: 100%">
+
+							<input id="tags" runat="server" type="text" style="text-align: right; direction: rtl;"  onserverchange="tags_OnServerChange"  />
+							<button runat="server" id="btnSearch" onserverclick="btnSearch_OnServerClick" >
+								<img src="img/ser.png" alt="images not found" /></button>
+						</div>
+						<%--<div class="ser-suggest">
+						<ul>
+							<li><a href="#">Search Suggestion One</a></li>
+
+						</ul>
+					</div>--%>
+					</div>
+				</div>
+			</div>
+			<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			</asp:ContentPlaceHolder>
+		</div>
+		<asp:ContentPlaceHolder ID="ContentPlaceHolderFooter" runat="server">
+		</asp:ContentPlaceHolder>
+
+
+
+		<!-- Main jQuery -->
+
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+			$(function () {
+				var availableTags = [
+					<% Response.Write(GetKeywords()); %>
+				];
+				$("#tags").autocomplete({
+					source: availableTags
+				});
+			});
+		</script>
+
+		<!-- Bootstrap Propper jQuery -->
+		<script src="js/popper.js"></script>
+
+		<!-- Bootstrap jQuery -->
+		<script src="js/bootstrap.js"></script>
+
+		<!-- Fontawesome Script -->
+		<!-- <script src="https://kit.fontawesome.com/7749c9f08a.js"></script> -->
+
+		<!-- Custom jQuery -->
+		<script src="js/scripts.js"></script>
+
+		<!-- Scroll-Top button -->
+		<a href="#" class="scrolltotop"><i class="fas fa-angle-up"></i></a>
+
+		<script>
+			$(document).ready(function () {
+				$("body").on("contextmenu", function (e) {
+					return false;
+				});
+			});
+		</script>
+		<script>
+			$(document).ready(function () {
+				$('body').bind('cut copy', function (e) {
+					e.preventDefault();
+				});
+			});
+		</script>
+
+	</form>
+</body>
+</html>

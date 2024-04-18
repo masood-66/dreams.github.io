@@ -1,0 +1,288 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Islamic_Dreams.Default1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <!-- Meta setup -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="">
+    <meta name="decription" content="">
+    <meta name="author" content="Safwan Hashmi">
+
+    <!-- Title -->
+    <title>Dreams in Islam</title>
+
+    <!-- Fav Icon -->
+    <link rel="icon" href="img/fav.png" />
+
+    <!-- Include Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+
+    <link rel="stylesheet" href="css/font.css" />
+
+    <link rel="stylesheet" href="https://use.typekit.net/wyc3jho.css">
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Tangerine:wght@700&display=swap');
+    </style>
+    <style>
+        @font-face {
+            font-family: 'KFGQPC Arabic Symbols 01';
+            src: url('Symbols1_Ver02.otf');
+        }
+
+        @font-face {
+            font-family: '_PDMS_Saleem_QuranFont';
+            src: url('_PDMS_Saleem_QuranFont Regular.ttf');
+        }
+
+        .p22para-wrapper p {
+            font-family: sans-serif;
+            font-size: 24px;
+            font-weight: 200;
+        }
+
+        .footer-wrapper p {
+            font-family: inherit;
+            margin-bottom: 0;
+            color: #000;
+            font-size: 10px;
+            text-align: left;
+        }
+
+        .menu-wrapper ul li ul {
+            position: absolute;
+            width: 240px;
+            text-align: left;
+            background: #142132;
+            padding: 20px;
+            top: 25px;
+            display: none;
+            z-index: 5000;
+        }
+
+        .footer-wrapper p small {
+            font-size: 13px;
+        }
+        .ref-content h2 {
+    /* font-family: "jameel-noori-nastaleeq"; */
+       font-family: sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 2px 1px var(--gray-dark);
+    color:#b59061;
+
+}
+       
+		.ui-menu-item-wrapper {
+			
+			font-size: 20px;
+			text-align: left;
+		}
+
+		.ui-widget-content {
+			border: 1px solid #dddddd;
+			background-color: black;
+			
+			font-size: 34px;
+			text-align: left;
+		}
+
+		.ui-widget.ui-widget-content {
+			border: 1px solid #c5c5c5;
+			background-color: #131f30;
+			color: white;
+			color: #fff;
+			display: block;
+			font-size: 20px;
+			color: #fff;
+			margin: 10px 0;
+
+		}
+		
+		
+/*.language-wrapper ul li:first-child a {
+    font-family: 'jameel-noori-nastaleeq';
+    font-size: 25px;
+    line-height: 1;
+    padding-top: 0;
+    padding-bottom: 7px;
+    margin-right: 8px;
+    position: relative;
+    top: -4px;
+    width: 76px;
+}*/
+	
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- language area start -->
+        <div class="language">
+            <div class="container-fluid text-center">
+                <img src="img/logo.png" class="img-fluid" height="" style="align-items: center; height: 64px;">
+                <div class="language-wrapper text-right" >
+                    <ul>
+
+                        <li style="background: #cb9d63;"><a style="color: whitesmoke;" href="http://110.93.246.114/English">ENG  </a></li>
+                        <li><a style="color: whitesmoke" href="http://110.93.246.114/Urdu">اردو</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- language area end -->
+
+        <!-- menu area start -->
+        <div class="menu d-none d-md-block">
+            <div class="container">
+                <div class="menu-wrapper text-center">
+                    <ul>
+                        <li><a class="active" href="Home">Home<span>|</span></a></li>
+                        <li><a href="#">Type of Dreams<span>|</span></a></li>
+                        <li><a href="Dream-Interpretation">Dream Interpretation<span>|</span> </a></li>
+                        <li><a href="#">Zeyarat &#9662;<span>|</span></a>
+                            <ul>
+                                <li><a href="#">Seeing Allah in Dreams</a></li>
+                                <li><a href="#">Seeing Angles in Dreams</a></li>
+                                <li><a href="#">Seeing Prophets in Dreams</a></li>
+                                <li><a href="#">Seeing Caliphs in Dreams</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="About-us">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- menu area end -->
+
+        <!-- sm-menu area start -->
+        <div class="sm-menu d-bloc d-md-none">
+            <div class="container">
+                <div class="sm-menu-wrapper">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-wrapper menu-sm-pop">
+                    <ul>
+                        <li><a class="active" href="#">HOME</a></li>
+                        <li><a href="javascript:void(0);">tAB 1 &#9662; </a>
+                            <ul>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">tAB 2 </a></li>
+                        <li><a href="javascript:void(0);">tAB 3 &#9662;</a>
+                            <ul>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                                <li><a href="#">Sub Menu Tab 1</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">About us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- sm-menu area end -->
+
+        <!-- banner area start -->
+        <div class="banner">
+            <div class="container-fluid">
+                <div class="banner-wrapper">
+                    <img src="img/ara.png" alt="images not found" style="display: none;">
+                </div>
+            </div>
+
+        </div>
+        <!-- banner area end -->
+        <div class="banner-bg">
+            <!-- search area start -->
+            <div class="search">
+                <div class="container">
+                    <div class="ser-sug">
+                        <div class="serach-wrapper" style="width: 100%">
+
+                            <input id="tags" runat="server" type="text" onserverchange="tags_OnServerChange" />
+                            <button runat="server" id="btnSearch" onserverclick="btnSearch_OnServerClick">
+                                <img src="img/ser.png" alt="images not found" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- search area end -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderFooter" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+
+        
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script>
+            $(function () {
+                var availableTags = [
+					<% Response.Write(GetKeywords()); %>
+                ];
+                $("#tags").autocomplete({
+                    source: availableTags
+                });
+            });
+        </script>
+        <!-- Main jQuery -->
+        <%--<script src="js/jquery-3.4.1.min.js"></script>--%>
+
+        <!-- Bootstrap Propper jQuery -->
+        <script src="js/popper.js"></script>
+
+        <!-- Bootstrap jQuery -->
+        <script src="js/bootstrap.js"></script>
+
+        <!-- Fontawesome Script -->
+        <script src="https://kit.fontawesome.com/7749c9f08a.js"></script>
+
+        <!-- Custom jQuery -->
+        <script src="js/scripts.js"></script>
+
+        <!-- Scroll-Top button -->
+        <a href="#" class="scrolltotop"><i class="fas fa-angle-up"></i></a>
+
+        <script>
+            $(document).ready(function () {
+                $("body").on("contextmenu", function (e) {
+                    return false;
+                });
+            });
+        </script>
+		<script>
+            $(document).ready(function () {
+                $('body').bind('cut copy', function (e) {
+                    e.preventDefault();
+                });
+            });
+        </script>
+       
+    </form>
+
+</body>
+</html>

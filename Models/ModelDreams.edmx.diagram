@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fdbc2b79cd484d139dbd023d0ee75806" Name="Diagram1">
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.APP_USERS" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.BOOKS_INFO" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.DATA_SETS" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.IMAM_INFO" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.KEY_WORDS" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.V_DREAMS_DATA" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.V_KEYWORDS" Width="1.5" PointX="7.75" PointY="5.75" />
+        <AssociationConnector Association="ISLAMIC_DREAMSModel.FK_KEY_WORDS_BOOKS_INFO" />
+        <AssociationConnector Association="ISLAMIC_DREAMSModel.FK_DATA_SETS_IMAM_INFO" />
+        <AssociationConnector Association="ISLAMIC_DREAMSModel.FK_DATA_SETS_KEY_WORDS" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.EXCLUTION_LIST" Width="1.5" PointX="3.375" PointY="8.75" />
+        <EntityTypeShape EntityType="ISLAMIC_DREAMSModel.INDEX_TABLE" Width="1.5" PointX="0.75" PointY="8.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

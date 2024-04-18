@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ISLAMIC_DREAMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="APP_USERS">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BOOKS_INFO">
+          <Key>
+            <PropertyRef Name="BOOK_ID" />
+          </Key>
+          <Property Name="BOOK_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BOOK_URDU" Type="nvarchar(max)" />
+          <Property Name="BOOK_ENG" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="DATA_SETS">
+          <Key>
+            <PropertyRef Name="DATA_ID" />
+          </Key>
+          <Property Name="DATA_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DATA_ENGLISH" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DATA_URDU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FK_KEY_CODE" Type="int" Nullable="false" />
+          <Property Name="FK_IMAM_CODE" Type="int" />
+        </EntityType>
+        <EntityType Name="EXCLUTION_LIST">
+          <Key>
+            <PropertyRef Name="EXC_ID" />
+          </Key>
+          <Property Name="EXC_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EXCLUTION_TEXT" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IS_ENGLISH" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IMAM_INFO">
+          <Key>
+            <PropertyRef Name="IMAM_ID" />
+          </Key>
+          <Property Name="IMAM_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IMAM_ENG" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IMAM_URDU" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INDEX_TABLE">
+          <Key>
+            <PropertyRef Name="INDEX_ID" />
+          </Key>
+          <Property Name="INDEX_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INDEX_ENGLISH" Type="varchar(max)" />
+          <Property Name="INDEX_URDU" Type="nvarchar(max)" />
+          <Property Name="INDEX_STATUS" Type="bit" />
+          <Property Name="TOTAL_COUNT" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KEY_WORDS">
+          <Key>
+            <PropertyRef Name="KEY_CODE" />
+          </Key>
+          <Property Name="KEY_CODE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KEY_ENGLISH" Type="varchar(max)" Nullable="false" />
+          <Property Name="KEY_URDU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FK_BOOK_REF" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ISLAMIC_DREAMS.dbo.V_DREAMS_DATA' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_DREAMS_DATA">
+          <Key>
+            <PropertyRef Name="DATA_ID" />
+            <PropertyRef Name="DATA_ENGLISH" />
+            <PropertyRef Name="DATA_URDU" />
+            <PropertyRef Name="KEY_CODE" />
+            <PropertyRef Name="KEY_ENGLISH" />
+            <PropertyRef Name="KEY_URDU" />
+            <PropertyRef Name="BOOK_ID" />
+          </Key>
+          <Property Name="DATA_ID" Type="int" Nullable="false" />
+          <Property Name="DATA_ENGLISH" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DATA_URDU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="KEY_CODE" Type="int" Nullable="false" />
+          <Property Name="KEY_ENGLISH" Type="varchar(max)" Nullable="false" />
+          <Property Name="KEY_URDU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="BOOK_ID" Type="int" Nullable="false" />
+          <Property Name="BOOK_URDU" Type="nvarchar(max)" />
+          <Property Name="BOOK_ENG" Type="nvarchar(max)" />
+          <Property Name="IMAM_ENG" Type="nvarchar(max)" />
+          <Property Name="IMAM_URDU" Type="nvarchar(max)" />
+          <Property Name="IMAM_ID" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ISLAMIC_DREAMS.dbo.V_KEYWORDS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="V_KEYWORDS">
+          <Key>
+            <PropertyRef Name="BOOK_ID" />
+            <PropertyRef Name="KEY_CODE" />
+            <PropertyRef Name="KEY_ENGLISH" />
+            <PropertyRef Name="KEY_URDU" />
+            <PropertyRef Name="FK_BOOK_REF" />
+          </Key>
+          <Property Name="BOOK_ID" Type="int" Nullable="false" />
+          <Property Name="BOOK_URDU" Type="nvarchar(max)" />
+          <Property Name="BOOK_ENG" Type="nvarchar(max)" />
+          <Property Name="KEY_CODE" Type="int" Nullable="false" />
+          <Property Name="KEY_ENGLISH" Type="varchar(max)" Nullable="false" />
+          <Property Name="KEY_URDU" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FK_BOOK_REF" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_DATA_SETS_IMAM_INFO">
+          <End Role="IMAM_INFO" Type="Self.IMAM_INFO" Multiplicity="0..1" />
+          <End Role="DATA_SETS" Type="Self.DATA_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMAM_INFO">
+              <PropertyRef Name="IMAM_ID" />
+            </Principal>
+            <Dependent Role="DATA_SETS">
+              <PropertyRef Name="FK_IMAM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATA_SETS_KEY_WORDS">
+          <End Role="KEY_WORDS" Type="Self.KEY_WORDS" Multiplicity="1" />
+          <End Role="DATA_SETS" Type="Self.DATA_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KEY_WORDS">
+              <PropertyRef Name="KEY_CODE" />
+            </Principal>
+            <Dependent Role="DATA_SETS">
+              <PropertyRef Name="FK_KEY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KEY_WORDS_BOOKS_INFO">
+          <End Role="BOOKS_INFO" Type="Self.BOOKS_INFO" Multiplicity="1" />
+          <End Role="KEY_WORDS" Type="Self.KEY_WORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOKS_INFO">
+              <PropertyRef Name="BOOK_ID" />
+            </Principal>
+            <Dependent Role="KEY_WORDS">
+              <PropertyRef Name="FK_BOOK_REF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ISLAMIC_DREAMSModelStoreContainer">
+          <EntitySet Name="APP_USERS" EntityType="Self.APP_USERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BOOKS_INFO" EntityType="Self.BOOKS_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DATA_SETS" EntityType="Self.DATA_SETS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EXCLUTION_LIST" EntityType="Self.EXCLUTION_LIST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IMAM_INFO" EntityType="Self.IMAM_INFO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INDEX_TABLE" EntityType="Self.INDEX_TABLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KEY_WORDS" EntityType="Self.KEY_WORDS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_DREAMS_DATA" EntityType="Self.V_DREAMS_DATA" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_DREAMS_DATA].[DATA_ID] AS [DATA_ID], 
+    [V_DREAMS_DATA].[DATA_ENGLISH] AS [DATA_ENGLISH], 
+    [V_DREAMS_DATA].[DATA_URDU] AS [DATA_URDU], 
+    [V_DREAMS_DATA].[KEY_CODE] AS [KEY_CODE], 
+    [V_DREAMS_DATA].[KEY_ENGLISH] AS [KEY_ENGLISH], 
+    [V_DREAMS_DATA].[KEY_URDU] AS [KEY_URDU], 
+    [V_DREAMS_DATA].[BOOK_ID] AS [BOOK_ID], 
+    [V_DREAMS_DATA].[BOOK_URDU] AS [BOOK_URDU], 
+    [V_DREAMS_DATA].[BOOK_ENG] AS [BOOK_ENG], 
+    [V_DREAMS_DATA].[IMAM_ENG] AS [IMAM_ENG], 
+    [V_DREAMS_DATA].[IMAM_URDU] AS [IMAM_URDU], 
+    [V_DREAMS_DATA].[IMAM_ID] AS [IMAM_ID]
+    FROM [dbo].[V_DREAMS_DATA] AS [V_DREAMS_DATA]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_KEYWORDS" EntityType="Self.V_KEYWORDS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_KEYWORDS].[BOOK_ID] AS [BOOK_ID], 
+    [V_KEYWORDS].[BOOK_URDU] AS [BOOK_URDU], 
+    [V_KEYWORDS].[BOOK_ENG] AS [BOOK_ENG], 
+    [V_KEYWORDS].[KEY_CODE] AS [KEY_CODE], 
+    [V_KEYWORDS].[KEY_ENGLISH] AS [KEY_ENGLISH], 
+    [V_KEYWORDS].[KEY_URDU] AS [KEY_URDU], 
+    [V_KEYWORDS].[FK_BOOK_REF] AS [FK_BOOK_REF]
+    FROM [dbo].[V_KEYWORDS] AS [V_KEYWORDS]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_DATA_SETS_IMAM_INFO" Association="Self.FK_DATA_SETS_IMAM_INFO">
+            <End Role="IMAM_INFO" EntitySet="IMAM_INFO" />
+            <End Role="DATA_SETS" EntitySet="DATA_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATA_SETS_KEY_WORDS" Association="Self.FK_DATA_SETS_KEY_WORDS">
+            <End Role="KEY_WORDS" EntitySet="KEY_WORDS" />
+            <End Role="DATA_SETS" EntitySet="DATA_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KEY_WORDS_BOOKS_INFO" Association="Self.FK_KEY_WORDS_BOOKS_INFO">
+            <End Role="BOOKS_INFO" EntitySet="BOOKS_INFO" />
+            <End Role="KEY_WORDS" EntitySet="KEY_WORDS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ISLAMIC_DREAMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DbConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="APP_USERS" EntityType="ISLAMIC_DREAMSModel.APP_USERS" />
+          <EntitySet Name="BOOKS_INFO" EntityType="ISLAMIC_DREAMSModel.BOOKS_INFO" />
+          <EntitySet Name="DATA_SETS" EntityType="ISLAMIC_DREAMSModel.DATA_SETS" />
+          <EntitySet Name="IMAM_INFO" EntityType="ISLAMIC_DREAMSModel.IMAM_INFO" />
+          <EntitySet Name="KEY_WORDS" EntityType="ISLAMIC_DREAMSModel.KEY_WORDS" />
+          <EntitySet Name="V_DREAMS_DATA" EntityType="ISLAMIC_DREAMSModel.V_DREAMS_DATA" />
+          <EntitySet Name="V_KEYWORDS" EntityType="ISLAMIC_DREAMSModel.V_KEYWORDS" />
+          <AssociationSet Name="FK_KEY_WORDS_BOOKS_INFO" Association="ISLAMIC_DREAMSModel.FK_KEY_WORDS_BOOKS_INFO">
+            <End Role="BOOKS_INFO" EntitySet="BOOKS_INFO" />
+            <End Role="KEY_WORDS" EntitySet="KEY_WORDS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATA_SETS_IMAM_INFO" Association="ISLAMIC_DREAMSModel.FK_DATA_SETS_IMAM_INFO">
+            <End Role="IMAM_INFO" EntitySet="IMAM_INFO" />
+            <End Role="DATA_SETS" EntitySet="DATA_SETS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DATA_SETS_KEY_WORDS" Association="ISLAMIC_DREAMSModel.FK_DATA_SETS_KEY_WORDS">
+            <End Role="KEY_WORDS" EntitySet="KEY_WORDS" />
+            <End Role="DATA_SETS" EntitySet="DATA_SETS" />
+          </AssociationSet>
+          <EntitySet Name="EXCLUTION_LIST" EntityType="ISLAMIC_DREAMSModel.EXCLUTION_LIST" />
+          <EntitySet Name="INDEX_TABLE" EntityType="ISLAMIC_DREAMSModel.INDEX_TABLE" />
+        </EntityContainer>
+        <EntityType Name="APP_USERS">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ROLE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BOOKS_INFO">
+          <Key>
+            <PropertyRef Name="BOOK_ID" />
+          </Key>
+          <Property Name="BOOK_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BOOK_URDU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BOOK_ENG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KEY_WORDS" Relationship="ISLAMIC_DREAMSModel.FK_KEY_WORDS_BOOKS_INFO" FromRole="BOOKS_INFO" ToRole="KEY_WORDS" />
+        </EntityType>
+        <EntityType Name="DATA_SETS">
+          <Key>
+            <PropertyRef Name="DATA_ID" />
+          </Key>
+          <Property Name="DATA_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DATA_ENGLISH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FK_KEY_CODE" Type="Int32" Nullable="false" />
+          <Property Name="FK_IMAM_CODE" Type="Int32" />
+          <NavigationProperty Name="IMAM_INFO" Relationship="ISLAMIC_DREAMSModel.FK_DATA_SETS_IMAM_INFO" FromRole="DATA_SETS" ToRole="IMAM_INFO" />
+          <NavigationProperty Name="KEY_WORDS" Relationship="ISLAMIC_DREAMSModel.FK_DATA_SETS_KEY_WORDS" FromRole="DATA_SETS" ToRole="KEY_WORDS" />
+        </EntityType>
+        <EntityType Name="IMAM_INFO">
+          <Key>
+            <PropertyRef Name="IMAM_ID" />
+          </Key>
+          <Property Name="IMAM_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IMAM_ENG" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAM_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DATA_SETS" Relationship="ISLAMIC_DREAMSModel.FK_DATA_SETS_IMAM_INFO" FromRole="IMAM_INFO" ToRole="DATA_SETS" />
+        </EntityType>
+        <EntityType Name="KEY_WORDS">
+          <Key>
+            <PropertyRef Name="KEY_CODE" />
+          </Key>
+          <Property Name="KEY_CODE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KEY_ENGLISH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FK_BOOK_REF" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BOOKS_INFO" Relationship="ISLAMIC_DREAMSModel.FK_KEY_WORDS_BOOKS_INFO" FromRole="KEY_WORDS" ToRole="BOOKS_INFO" />
+          <NavigationProperty Name="DATA_SETS" Relationship="ISLAMIC_DREAMSModel.FK_DATA_SETS_KEY_WORDS" FromRole="KEY_WORDS" ToRole="DATA_SETS" />
+        </EntityType>
+        <EntityType Name="V_DREAMS_DATA">
+          <Key>
+            <PropertyRef Name="DATA_ID" />
+            <PropertyRef Name="DATA_ENGLISH" />
+            <PropertyRef Name="DATA_URDU" />
+            <PropertyRef Name="KEY_CODE" />
+            <PropertyRef Name="KEY_ENGLISH" />
+            <PropertyRef Name="KEY_URDU" />
+            <PropertyRef Name="BOOK_ID" />
+          </Key>
+          <Property Name="DATA_ID" Type="Int32" Nullable="false" />
+          <Property Name="DATA_ENGLISH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DATA_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KEY_CODE" Type="Int32" Nullable="false" />
+          <Property Name="KEY_ENGLISH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BOOK_ID" Type="Int32" Nullable="false" />
+          <Property Name="BOOK_URDU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BOOK_ENG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAM_ENG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAM_URDU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IMAM_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="V_KEYWORDS">
+          <Key>
+            <PropertyRef Name="BOOK_ID" />
+            <PropertyRef Name="KEY_CODE" />
+            <PropertyRef Name="KEY_ENGLISH" />
+            <PropertyRef Name="KEY_URDU" />
+            <PropertyRef Name="FK_BOOK_REF" />
+          </Key>
+          <Property Name="BOOK_ID" Type="Int32" Nullable="false" />
+          <Property Name="BOOK_URDU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BOOK_ENG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="KEY_CODE" Type="Int32" Nullable="false" />
+          <Property Name="KEY_ENGLISH" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="KEY_URDU" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FK_BOOK_REF" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_KEY_WORDS_BOOKS_INFO">
+          <End Type="ISLAMIC_DREAMSModel.BOOKS_INFO" Role="BOOKS_INFO" Multiplicity="1" />
+          <End Type="ISLAMIC_DREAMSModel.KEY_WORDS" Role="KEY_WORDS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BOOKS_INFO">
+              <PropertyRef Name="BOOK_ID" />
+            </Principal>
+            <Dependent Role="KEY_WORDS">
+              <PropertyRef Name="FK_BOOK_REF" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATA_SETS_IMAM_INFO">
+          <End Type="ISLAMIC_DREAMSModel.IMAM_INFO" Role="IMAM_INFO" Multiplicity="0..1" />
+          <End Type="ISLAMIC_DREAMSModel.DATA_SETS" Role="DATA_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IMAM_INFO">
+              <PropertyRef Name="IMAM_ID" />
+            </Principal>
+            <Dependent Role="DATA_SETS">
+              <PropertyRef Name="FK_IMAM_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DATA_SETS_KEY_WORDS">
+          <End Type="ISLAMIC_DREAMSModel.KEY_WORDS" Role="KEY_WORDS" Multiplicity="1" />
+          <End Type="ISLAMIC_DREAMSModel.DATA_SETS" Role="DATA_SETS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KEY_WORDS">
+              <PropertyRef Name="KEY_CODE" />
+            </Principal>
+            <Dependent Role="DATA_SETS">
+              <PropertyRef Name="FK_KEY_CODE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EXCLUTION_LIST">
+          <Key>
+            <PropertyRef Name="EXC_ID" />
+          </Key>
+          <Property Name="EXC_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EXCLUTION_TEXT" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IS_ENGLISH" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="INDEX_TABLE">
+          <Key>
+            <PropertyRef Name="INDEX_ID" />
+          </Key>
+          <Property Name="INDEX_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INDEX_ENGLISH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="INDEX_URDU" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="INDEX_STATUS" Type="Boolean" />
+          <Property Name="TOTAL_COUNT" Type="Int32" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ISLAMIC_DREAMSModelStoreContainer" CdmEntityContainer="DbConnection">
+          <EntitySetMapping Name="APP_USERS">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.APP_USERS">
+              <MappingFragment StoreEntitySet="APP_USERS">
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BOOKS_INFO">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.BOOKS_INFO">
+              <MappingFragment StoreEntitySet="BOOKS_INFO">
+                <ScalarProperty Name="BOOK_ENG" ColumnName="BOOK_ENG" />
+                <ScalarProperty Name="BOOK_URDU" ColumnName="BOOK_URDU" />
+                <ScalarProperty Name="BOOK_ID" ColumnName="BOOK_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DATA_SETS">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.DATA_SETS">
+              <MappingFragment StoreEntitySet="DATA_SETS">
+                <ScalarProperty Name="FK_IMAM_CODE" ColumnName="FK_IMAM_CODE" />
+                <ScalarProperty Name="FK_KEY_CODE" ColumnName="FK_KEY_CODE" />
+                <ScalarProperty Name="DATA_URDU" ColumnName="DATA_URDU" />
+                <ScalarProperty Name="DATA_ENGLISH" ColumnName="DATA_ENGLISH" />
+                <ScalarProperty Name="DATA_ID" ColumnName="DATA_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IMAM_INFO">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.IMAM_INFO">
+              <MappingFragment StoreEntitySet="IMAM_INFO">
+                <ScalarProperty Name="IMAM_URDU" ColumnName="IMAM_URDU" />
+                <ScalarProperty Name="IMAM_ENG" ColumnName="IMAM_ENG" />
+                <ScalarProperty Name="IMAM_ID" ColumnName="IMAM_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KEY_WORDS">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.KEY_WORDS">
+              <MappingFragment StoreEntitySet="KEY_WORDS">
+                <ScalarProperty Name="FK_BOOK_REF" ColumnName="FK_BOOK_REF" />
+                <ScalarProperty Name="KEY_URDU" ColumnName="KEY_URDU" />
+                <ScalarProperty Name="KEY_ENGLISH" ColumnName="KEY_ENGLISH" />
+                <ScalarProperty Name="KEY_CODE" ColumnName="KEY_CODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_DREAMS_DATA">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.V_DREAMS_DATA">
+              <MappingFragment StoreEntitySet="V_DREAMS_DATA">
+                <ScalarProperty Name="IMAM_ID" ColumnName="IMAM_ID" />
+                <ScalarProperty Name="IMAM_URDU" ColumnName="IMAM_URDU" />
+                <ScalarProperty Name="IMAM_ENG" ColumnName="IMAM_ENG" />
+                <ScalarProperty Name="BOOK_ENG" ColumnName="BOOK_ENG" />
+                <ScalarProperty Name="BOOK_URDU" ColumnName="BOOK_URDU" />
+                <ScalarProperty Name="BOOK_ID" ColumnName="BOOK_ID" />
+                <ScalarProperty Name="KEY_URDU" ColumnName="KEY_URDU" />
+                <ScalarProperty Name="KEY_ENGLISH" ColumnName="KEY_ENGLISH" />
+                <ScalarProperty Name="KEY_CODE" ColumnName="KEY_CODE" />
+                <ScalarProperty Name="DATA_URDU" ColumnName="DATA_URDU" />
+                <ScalarProperty Name="DATA_ENGLISH" ColumnName="DATA_ENGLISH" />
+                <ScalarProperty Name="DATA_ID" ColumnName="DATA_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_KEYWORDS">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.V_KEYWORDS">
+              <MappingFragment StoreEntitySet="V_KEYWORDS">
+                <ScalarProperty Name="FK_BOOK_REF" ColumnName="FK_BOOK_REF" />
+                <ScalarProperty Name="KEY_URDU" ColumnName="KEY_URDU" />
+                <ScalarProperty Name="KEY_ENGLISH" ColumnName="KEY_ENGLISH" />
+                <ScalarProperty Name="KEY_CODE" ColumnName="KEY_CODE" />
+                <ScalarProperty Name="BOOK_ENG" ColumnName="BOOK_ENG" />
+                <ScalarProperty Name="BOOK_URDU" ColumnName="BOOK_URDU" />
+                <ScalarProperty Name="BOOK_ID" ColumnName="BOOK_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EXCLUTION_LIST">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.EXCLUTION_LIST">
+              <MappingFragment StoreEntitySet="EXCLUTION_LIST">
+                <ScalarProperty Name="IS_ENGLISH" ColumnName="IS_ENGLISH" />
+                <ScalarProperty Name="EXCLUTION_TEXT" ColumnName="EXCLUTION_TEXT" />
+                <ScalarProperty Name="EXC_ID" ColumnName="EXC_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INDEX_TABLE">
+            <EntityTypeMapping TypeName="ISLAMIC_DREAMSModel.INDEX_TABLE">
+              <MappingFragment StoreEntitySet="INDEX_TABLE">
+                <ScalarProperty Name="TOTAL_COUNT" ColumnName="TOTAL_COUNT" />
+                <ScalarProperty Name="INDEX_STATUS" ColumnName="INDEX_STATUS" />
+                <ScalarProperty Name="INDEX_URDU" ColumnName="INDEX_URDU" />
+                <ScalarProperty Name="INDEX_ENGLISH" ColumnName="INDEX_ENGLISH" />
+                <ScalarProperty Name="INDEX_ID" ColumnName="INDEX_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

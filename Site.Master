@@ -1,0 +1,220 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Islamic_Dreams.Site" EnableViewState="true" %>
+
+<%@ Register Src="~/Navigation.ascx" TagPrefix="uc1" TagName="Navigation" %>
+<%@ Register Src="~/TitleHeader.ascx" TagPrefix="uc1" TagName="TitleHeader" %>
+<%@ Register Src="~/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+<%@ Register Src="~/Notification.ascx" TagPrefix="uc1" TagName="Notification" %>
+<%@ Register Src="~/Languages.ascx" TagPrefix="uc1" TagName="Languages" %>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head runat="server">
+	<title>Dreams in Islam </title>
+
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+
+	<meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
+	<meta content="Themesbrand" name="author" />
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+	<!-- datepicker -->
+	<link href="plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<!-- DataTables -->
+	<link href="plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+	<link href="plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+	<!-- Responsive datatable examples -->
+	<link href="plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<%--<link href="assets/css/style-urdu.css" rel="stylesheet" />--%>
+	<script type="text/javascript" src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.3.min.js'></script>
+
+
+	<style type="text/css">
+		@font-face {
+			font-family: jameel-noori-nastaleeq;
+			src: url("font/JameelNooriNastaleeq.ttf") format("woff"), url("font/JameelNooriNastaleeq.ttf") format("opentype"), url("font/JameelNooriNastaleeq.ttf") format("truetype");
+		}
+
+		.body {
+			font-family: "jameel-noori-nastaleeq";
+			font-size: 12px;
+		}
+		
+
+		.subnav:hover .submenu {
+			display: block;
+		}
+		
+	</style>
+	<style>
+		table.dataTable > tbody > td.child ul {
+			display: inline-block;
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			text-align: right;
+			white-space: pre-wrap;
+		}
+
+		.form-control {
+			font-family: jameel-noori-nastaleeq;
+			font-size: 16px;
+		}
+
+		th {
+			font-size: 16.5px;
+			white-space: pre-wrap;
+			font-weight: bold;
+		}
+
+		table, td {
+			font-family: jameel-noori-nastaleeq;
+			font-size: 15.5px;
+			white-space: pre-wrap;
+		}
+		
+	</style>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+
+<body>
+	<form id="form1" runat="server">
+		<div class="header-bg">
+			<!-- Navigation Bar-->
+			<header id="topnav">
+				<div class="topbar-main">
+					<div class="container-fluid">
+
+						<!-- Logo container-->
+						<div class="logo">
+							<a href="Dashboard" class="logo">
+								<img src="assets/images/favicon.png" height="50" alt="" class="logo-small">
+								<img src="assets/images/favicon.png" height="50" alt="" class="logo-large">
+							</a>
+						</div>
+						<!-- End Logo container-->
+
+						<div class="menu-extras topbar-custom">
+
+							<ul class="navbar-right list-inline float-right mb-0">
+
+
+
+
+								<!-- full screen -->
+								<li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+									<a class="nav-link" href="#" id="btn-fullscreen">
+										<i class="ion ion-md-qr-scanner noti-icon"></i>
+									</a>
+								</li>
+
+								<li class="dropdown notification-list list-inline-item">
+									<div class="dropdown notification-list nav-pro-img">
+										
+										<button class="dropdown-item text-danger" runat="server" OnServerClick="OnServerClick"><i class="mdi mdi-power text-danger" ></i>Sign out</button>
+									</div>
+								</li>
+
+								<li class="menu-item list-inline-item">
+									<!-- Mobile menu toggle-->
+									<a class="navbar-toggle nav-link">
+										<div class="lines">
+											<span></span>
+											<span></span>
+											<span></span>
+										</div>
+									</a>
+									<!-- End mobile menu toggle-->
+								</li>
+
+							</ul>
+						</div>
+						<!-- end menu-extras -->
+						<div class="clearfix"></div>
+					</div>
+					<!-- end container -->
+				</div>
+				<!-- end topbar-main -->
+
+				<!-- MENU Start -->
+				<div class="navbar-custom">
+					<div class="container-fluid">
+						<uc1:Navigation runat="server" ID="Navigation" />
+					</div>
+					<!-- end container -->
+				</div>
+				<!-- end navbar-custom -->
+			</header>
+			<!-- End Navigation Bar-->
+			<!-- End Navigation Bar-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12">
+						<div class="page-title-box">
+							<div class="row align-items-center">
+								<div class="col-sm-12">
+									<h4 class="page-title text-center" style="color: #f2b300; font-size: x-large;">
+										<asp:Label runat="server" ID="pageTitle" Text='' />
+									</h4>
+
+								</div>
+
+							</div>
+							<!-- end col-->
+						</div>
+						<!-- end row-->
+					</div>
+					<!-- end page title -->
+				</div>
+				<!-- end col -->
+			</div>
+		</div>
+		<!-- end header-bg -->
+		<!-- page wrapper start -->
+		<div class="wrapper">
+			<div class="container-fluid">
+				<asp:ScriptManager runat="server" ID="ScriptManager1" >
+					<Scripts>
+						<asp:ScriptReference Path="~/assets/js/jquery.min.js"/>
+						<asp:ScriptReference Path="~/assets/js/bootstrap.bundle.min.js"/>
+						<asp:ScriptReference Path="~/assets/js/jquery.slimscroll.js"/>
+						<asp:ScriptReference Path="~/assets/js/waves.min.js"/>
+						<asp:ScriptReference Path="~/plugins/datatables/jquery.dataTables.min.js"/>
+						<asp:ScriptReference Path="~/plugins/datatables/dataTables.bootstrap4.min.js"/>
+						<asp:ScriptReference Path="~/plugins/datatables/dataTables.buttons.min.js"/>
+						<asp:ScriptReference Path="~/plugins/datatables/dataTables.responsive.min.js"/>
+						<asp:ScriptReference Path="~/plugins/datatables/responsive.bootstrap4.min.js"/>
+						<asp:ScriptReference Path="~/assets/pages/datatables.init.js"/>
+						<asp:ScriptReference Path="~/assets/js/app.js"/>
+					</Scripts>
+				</asp:ScriptManager>
+				<asp:UpdatePanel ID="UpdatePanelWebsiteHeader" runat="server">
+					<ContentTemplate>
+						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+						</asp:ContentPlaceHolder>
+					</ContentTemplate>
+				</asp:UpdatePanel>
+			</div>
+			<!-- end container-fluid -->
+		</div>
+		<!-- page wrapper end -->
+		<!-- Footer -->
+		<uc1:Footer runat="server" ID="Footer" />
+		<!-- End Footer -->
+	</form>
+	<!-- jQuery  -->
+
+	
+	
+</body>
+
+</html>
